@@ -9,8 +9,7 @@ function scramble(str1, str2) {
   toCompare.forEach(elementTocCompare => {
     toGet.forEach(elementToGet => {
       if (elementTocCompare === elementToGet) {
-        toGet.splice(elementToGet, 1);
-        finalarray.push(elementToGet);
+        finalarray.push(elementTocCompare);
       }
       //   if (elementTocCompare !== elementToGet) {
       //     toCompare.splice(elementTocCompare, 1);
