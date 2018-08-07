@@ -60,18 +60,21 @@ const howMany = inventors.reduce((total, inventor) => {
 
 // return how many times a string is repeated in the data array(CLEVER WAY)
 const instance = data.reduce((obj, item) => {
+  // we set an empty object  to sstart with
   if (!obj[item]) {
     obj[item] = 0;
   }
+  // we increment the item if it finds it in the array
   obj[item]++;
+  //   we return the object
   return obj;
 }, {});
 // console.log(instance);
 
 // sort the names array by lastName
-const lastNameArray = names.sort((first, last) => {
-  const [afirstName, aLastname] = first;
-  const [bfirstName, blastname] = last;
-  return first.aLastname > last.blastname ? 1 : -1;
+const lastNameArray = names.sort((last, next) => {
+  const [aLast, aFirst] = last.split(", ");
+  const [bLast, bFirst] = next.split(", ");
+  return aLast > bLast ? 1 : -1;
 });
 console.log(lastNameArray);
