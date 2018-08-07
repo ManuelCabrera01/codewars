@@ -60,21 +60,23 @@ const howMany = inventors.reduce((total, inventor) => {
 
 // return how many times a string is repeated in the data array(CLEVER WAY)
 const instance = data.reduce((obj, item) => {
-  // we set an empty object  to sstart with
+  //  set an empty object  to start with
   if (!obj[item]) {
     obj[item] = 0;
   }
-  // we increment the item if it finds it in the array
+  //  increment the item if it finds it in the array
   obj[item]++;
-  //   we return the object
+  //   return the object
   return obj;
 }, {});
 // console.log(instance);
 
 // sort the names array by lastName
 const lastNameArray = names.sort((last, next) => {
+  //  destrocture each string in the array to have them in separate variables,  two per small array so i can compare each element of each  small array
   const [aLast, aFirst] = last.split(", ");
   const [bLast, bFirst] = next.split(", ");
+  // and then just sort it by alfabetic order
   return aLast > bLast ? 1 : -1;
 });
 console.log(lastNameArray);
