@@ -1,17 +1,21 @@
-function isBalanced(string, caps) {
-  // creating my variables
+function isBalanced(string, sing) {
+  // creating my variables/
   let i;
   let stack = [];
 
-  for (var c of string) {
+  for (let c of string) {
     // iterating throug the string and sering i equal the the index of each element
-    i = caps.indexOf(c);
-
+    i = sing.indexOf(c);
+    // here if the element match  with the previous element keep iterating
     if (i === -1) continue;
-    else if (stack.length && stack[0] === caps.lastIndexOf(c) - 1)
+    // check if the begging of the stack and the of the stack is equal to the last index of the sing string, if so remove it
+    else if (stack.length && stack[0] === sing.lastIndexOf(c) - 1) {
       stack.shift();
-    else stack.unshift(i);
+      // if not addit the the stack array
+    } else stack.unshift(i);
   }
 
-  return !stack.length;
+  console.log(!stack.length);
 }
+// isBalanced("(Sensei says yes!)", "()");
+isBalanced("(Sensei says no!", "()");
