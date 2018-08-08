@@ -1,7 +1,3 @@
-// must return 2
-
-// must return 0
-
 function cakes(recipe, available) {
   arrayToCompare = [];
   // if the recipe contains more items that what is available  return 0
@@ -15,6 +11,7 @@ function cakes(recipe, available) {
     for (const ingr in available) {
       arrayToCompare.push([ingr, available[ingr]]);
     }
+
     const sortedArray = arrayToCompare.sort((last, next) => {
       //  destrocture each string in the array to have them in separate variables,  two per small array so i can compare each element of each  small array
       const [aLast, aFirst] = last;
@@ -22,10 +19,18 @@ function cakes(recipe, available) {
       // and then just sort it by alfabetic order
       return aLast > bLast ? 1 : -1;
     });
-    sortedArray.forEach(element => {
-      console.log(element);
-    });
-    // console.log(sortedArray);
+    // not the nmost eficient way to get the single non duplicate element on the array
+    for (var i = 0; i < sortedArray.length; i++) {
+      for (var j = i; j < sortedArray.length; j++) {
+        if (sortedArray[i][0] != sortedArray[j][0]) {
+          result = sortedArray[i];
+        }
+      }
+    }
+    // removing that Element
+    let index = sortedArray.indexOf(result, 1);
+    sortedArray.splice(index, 1);
+    console.log(sortedArray);
   }
 }
 
@@ -39,6 +44,6 @@ cakes(
 );
 // const newArr = sortedArray.filter(function(a) {
 //   if (sortedArray.indexOf(a) == sortedArray.lastIndexOf(a)) {
-//     console.log;
+// return true;
 //   }
 // });

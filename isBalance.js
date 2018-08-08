@@ -2,7 +2,6 @@ function isBalanced(string, sing) {
   // creating my variables/
   let i;
   let stack = [];
-
   for (let c of string) {
     // iterating throug the string and sering i equal the the index of each element
     i = sing.indexOf(c);
