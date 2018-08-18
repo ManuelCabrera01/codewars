@@ -1,43 +1,41 @@
-let to_nato = words => {
-  let originalArray = words.split("");
-  let finalarray = [];
-  let pilotArr = [
-    "Alfa",
-    "Bravo",
-    "Charlie",
-    "Delta",
-    "Echo",
-    "Foxtrot",
-    "Golf",
-    "Hotel",
-    "India",
-    "Juliett",
-    "Kilo",
-    "Lima",
-    "Mike",
-    "November",
-    "Oscar",
-    "Papa",
-    "Quebec",
-    "Romeo",
-    "Sierra",
-    "Tango",
-    "Uniform",
-    "Victor",
-    "Whiskey",
-    "X-ray",
-    "Yankee",
-    "Zulu"
-  ];
-  originalArray.forEach(originalWord => {
-    pilotArr.forEach(pilotWord => {
-      if (originalWord === pilotWord) {
-        finalarray.push(elementTocCompare);
-      }
-    });
-  });
-  console.log(finalarray);
-};
+function to_nato(words) {
+  var translate = {
+    a: "Alfa ",
+    b: "Bravo ",
+    c: "Charlie ",
+    d: "Delta ",
+    e: "Echo ",
+    f: "Foxtrot ",
+    g: "Golf ",
+    h: "Hotel ",
+    i: "India ",
+    j: "Juliett ",
+    k: "Kilo ",
+    l: "Lima ",
+    m: "Mike ",
+    n: "November ",
+    o: "Oscar ",
+    p: "Papa ",
+    q: "Quebec ",
+    r: "Romeo ",
+    s: "Sierra ",
+    t: "Tango ",
+    u: "Uniform ",
+    v: "Victor ",
+    w: "Whiskey ",
+    x: "Xray ",
+    y: "Yankee ",
+    z: "Zulu ",
+    "?": "? ",
+    ".": ". ",
+    " ": "",
+    "!": "! "
+  };
 
-let input = "If you can read";
-to_nato(input);
+  return words
+    .toLowerCase()
+    .split("")
+    .map(char => translate[char])
+    .join("")
+    .trim();
+}
