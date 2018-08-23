@@ -11,3 +11,11 @@ function count(string) {
 const strOne = "abbbbbbba";
 
 count(strOne);
+
+/// i like this solution in  codeWars solution
+// function count (string) {
+//     return string.split('').reduce(function(counts,char){
+//       counts[char] = (counts[char]||0) + 1;
+//       return counts;
+//     },{});
+//   }
