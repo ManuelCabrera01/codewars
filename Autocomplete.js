@@ -1,17 +1,21 @@
-// RegExp
+var one= 'Ai'
+var array =  ['airpla$#%#$ne','aIrp@###ort','ap[]][ple','ball']
 
-var one = "Ap";
-var array = ["airpla$#%#$ne", "airp@###ort", "ap[]][ple", "ball"];
 
-let autocomplete = (input, dictionary) => {
-  let cleanARray = dictionary
-    .map(dirtyW => {
-      return dirtyW.replace(/[^A-Za-z]/g, "");
-    })
-    .filter(cleanW => {
-      return cleanW.includes(input);
-    });
+let autocomplete =((input, dictionary) =>{
+let matches = []
+let firstRegex = new RegExp(/[^A-Za-z]/g)
+let secondRegex =new RegExp( input,'gi')
 
-  return cleanARray;
-};
-console.log(autocomplete(one, array));
+//cleaning theincput array  from any signbol
+let cleanARray = dictionary.map((dirtyW)=>{
+  return dirtyW.replace(firstRegex, "") 
+   })
+
+cleanARray.forEach((element)=>{
+matches.push(element.match(secondRegex))
+})
+console.log(matches)
+
+}) 
+autocomplete(one, array)
